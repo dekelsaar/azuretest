@@ -9,11 +9,20 @@ trigger:
 pool:
   name: test-pool
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+stages:
+- stage: Build image
+  jobs:
+  - job:
+    displayName: Build image
 
-- script: 
-    echo abba
-    
-  displayName: 'Run a multi-line script'
+
+    steps:
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'DockerR'
+        repository: 'dekelsaar/azureR'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
+        tags: '1.0'
+
+
