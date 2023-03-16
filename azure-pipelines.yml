@@ -10,7 +10,7 @@ pool:
   name: test-pool
 
 stages:
-- stage: Build image
+- stage: Build
   jobs:
   - job:
     displayName: Build image
