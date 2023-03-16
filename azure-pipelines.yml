@@ -23,6 +23,6 @@ stages:
         repository: 'dekelsaar/azureR'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
-        tags: '1.0'
+        tags: '1.1'
 
 
