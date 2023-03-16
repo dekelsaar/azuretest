@@ -7,6 +7,10 @@ pool:
 stages:
 - stage: Build
   jobs:
+  - job:
+    steps:
+    - script:
+        "docker logout"
   - job: BuildPushImage
     steps:
 
